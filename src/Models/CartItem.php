@@ -15,6 +15,8 @@ class CartItem extends Model
         'cart_id', 'model_type', 'model_id', 'name', 'price', 'image', 'quantity',
     ];
 
+    protected $with = ['cartable'];
+
     /**
      * This method is put to convert snake case in camelCase.
      *
@@ -30,6 +32,18 @@ class CartItem extends Model
             'price' => $this->price,
             'image' => $this->image,
             'quantity' => $this->quantity,
+            'cartable' => $this->cartable,
         ];
+    }
+
+
+    /**
+     * Get the original cartable model.
+     *
+     * @return hasOne
+     */
+    public function cartable()
+    {
+        return $this->morphTo(null, 'model_type', 'model_id');
     }
 }

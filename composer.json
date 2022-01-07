@@ -1,5 +1,5 @@
 {
-    "name": "freshbitsweb/laravel-cart-manager",
+    "name": "insight-media/laravel-cart-manager",
     "description": "Managing the cart of your Laravel application is a breeze",
     "require": {
         "php": "^7.3|^7.4|^8.0",
@@ -16,6 +16,10 @@
         {
             "name": "Gaurav Makhecha",
             "email": "info@freshbits.in"
+        },
+        {
+            "name": "Dries Dekeersgieter",
+            "email": "dries@insight-media.be"
         }
     ],
     "autoload": {

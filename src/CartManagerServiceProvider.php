@@ -49,8 +49,8 @@ class CartManagerServiceProvider extends ServiceProvider
         $this->app->bind(CartDriver::class, $this->app['config']['cart_manager']['driver']);
 
         // Bind the cart class
-        $this->app->bind(Cart::class, function ($app) {
-            return new Cart($app->make(CartDriver::class));
+        $this->app->bind($this->app['config']['cart_manager']['cart_class'], function ($app) {
+            return new $this->app['config']['cart_manager']['cart_class']($app->make(CartDriver::class));
         });
     }
 }

@@ -2,8 +2,6 @@
 
 namespace Freshbitsweb\LaravelCartManager\Traits;
 
-use Freshbitsweb\LaravelCartManager\Core\Cart;
-
 trait Cartable
 {
     /**
@@ -17,6 +15,6 @@ trait Cartable
     {
         $class = static::class;
 
-        return app(Cart::class)->add($class::findOrFail($id), $quantity);
+        return app(config('cart_manager.cart_class'))->add($class::findOrFail($id), $quantity);
     }
 }
