@@ -141,6 +141,7 @@ class Cart implements Arrayable
     public function toArray($withItems = true)
     {
         $cartData = [
+            'id' => $this->id,
             'subtotal' => $this->subtotal,
             'discount' => $this->discount,
             'discountPercentage' => $this->discountPercentage,
