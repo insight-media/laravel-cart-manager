@@ -101,7 +101,9 @@ class DatabaseDriver implements CartDriver
     {
         $cartData = $this->arraySnakeCase($cartData);
 
-        Cart::where('id', $cartId)->update($cartData);
+        $cart = Cart::where('id', $cartId)->first();
+        $cart->fill($cartData);
+        $cart->update();
     }
 
     /**
